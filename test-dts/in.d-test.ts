@@ -11,7 +11,7 @@ describe('in', () => {
     // 外围用[]包裹，[P in T]为固定搭配
     // 冒号右侧，表示对应的key设置为指定的类型
     type TypeToNumber<T> = {
-      [P in keyof T]: number
+      [P in keyof T]: T[P]
     }
 
     type Person = {
@@ -20,7 +20,13 @@ describe('in', () => {
     }
 
     let man: TypeToNumber<Person> = {
-      name: "123" // 报错 映射之后值必须是 number 类型
+      name: 123 // 报错 映射的值必须是 string 类型
+    }
+  })
+
+  describe('in 遍历数组, 使用 T[number]', () => {
+    type obj<T extends readonly any[]> = {
+      [P in T[number]] : P
     }
   })
 })
