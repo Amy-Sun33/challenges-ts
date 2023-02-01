@@ -24,9 +24,14 @@ describe('in', () => {
     }
   })
 
-  describe('in 遍历数组, 使用 T[number]', () => {
+  describe('in 遍历数组, 使用 T[number], 结果同keyof操作对象', () => {
     type obj<T extends readonly any[]> = {
       [P in T[number]] : P
     }
+
+    // demo
+    type ages = [1, 2, 3]
+    type t1 = ages[number] 
+    // 结果： 3 ｜ 1 ｜ 2
   })
 })
