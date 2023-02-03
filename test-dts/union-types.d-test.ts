@@ -1,7 +1,7 @@
 import { describe } from ".";
 
 
-describe('Union Types', () => {
+describe('Union Types[联合类型]', () => {
 
   describe('联合类型，表示值可能是这些类型中的任意一个', () => {
     let myData: string | number
