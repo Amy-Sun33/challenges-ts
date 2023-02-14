@@ -7,5 +7,4 @@ type MyAwaited<T extends Promise<unknown>> = T extends Promise<infer U>
 
 type Thenable<T> = T extends { then: (onfulfilled: (arg: infer X) => any) => any } ? X : never
 
-
 // 1. infer
